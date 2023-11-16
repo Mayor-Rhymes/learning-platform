@@ -12,16 +12,16 @@
       class="flex justify-evenly bg-black text-xl py-12 px-12 gap-20 text-white rounded-lg"
     >
       <div class="flex flex-col items-center justify-center">
-        <p>10k+</p>
-        <p>Exceptional Tutors</p>
+        <p class="text-center">10k+</p>
+        <p class="text-center">Exceptional Tutors</p>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <p>280k+</p>
-        <p>Lessons Taught</p>
+        <p class="text-center">280k+</p>
+        <p class="text-center">Lessons Taught</p>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <p>48k+</p>
-        <p>Students Supported</p>
+        <p class="text-center">48k+</p>
+        <p class="text-center">Students Supported</p>
       </div>
     </div>
   </div>
