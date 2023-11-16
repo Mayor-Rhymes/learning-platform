@@ -15,7 +15,7 @@ import { RouterLink } from "vue-router";
     We Make Learning Superbly Fun and Inclusive
   </p>
   <nav
-    class="w-full hidden md:flex lg:flex p-5 items-center justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
+    class="w-full hidden md:flex lg:flex p-5 items-center fixed top-0 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
   >
     <RouterLink to="/">Designated Logo</RouterLink>
 
@@ -29,7 +29,7 @@ import { RouterLink } from "vue-router";
 
     <input
       type="text"
-      class="w-[400px] hidden lg:block md:hidden outline-none h-[50px] rounded-xl p-4 bg-slate-200"
+      class="w-[400px] place-self-stretch hidden lg:block md:hidden outline-none h-[50px] rounded-xl p-4 bg-slate-200"
       placeholder="Search For a service"
     />
 

@@ -1,17 +1,18 @@
 <script setup lang="ts">
 
    import { Home, Headphones, Server, LogIn } from "lucide-vue-next"
+   import {RouterLink} from "vue-router"
 </script>
 
 <template>
     <nav class="flex p-4 md:hidden lg:hidden bottom-0 w-full bg-white items-center z-20 justify-evenly fixed">
         <div class="flex cursor-pointer gap-1 justify-center items-center flex-col">
             <Home :size=20 />
-            <p>Home</p>
+            <RouterLink to="/">Home</RouterLink>
         </div>
         <div class="flex cursor-pointer gap-1 justify-center items-center flex-col">
             <Server :size=20 />
-            <p>Services</p>
+            <RouterLink to="/about">Services</RouterLink>
         </div>
         <div class="flex cursor-pointer gap-1 justify-center items-center flex-col">
             <Headphones :size=20 />
