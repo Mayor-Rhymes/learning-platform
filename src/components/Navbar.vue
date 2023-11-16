@@ -11,7 +11,7 @@ import { RouterLink } from "vue-router";
     Designated Logo
   </RouterLink>
 
-  <p class="lg:hidden md:hidden block text-center">
+  <p class="lg:hidden md:hidden text-xl block text-center">
     We Make Learning Superbly Fun and Inclusive
   </p>
   <nav
@@ -55,7 +55,7 @@ import { RouterLink } from "vue-router";
   </nav>
   <input
     type="text"
-    class="w-[70%] mx-auto lg:hidden block md:block outline-none h-[50px] rounded-xl p-4 bg-slate-200"
+    class="w-[70%] mx-auto text-xl placeholder-black lg:hidden block md:block outline-none h-[50px] rounded-xl p-4 bg-slate-200"
     placeholder="Search For a service"
   />
 </template>

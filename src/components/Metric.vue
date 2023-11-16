@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-20 text-4xl font-extrabold items-center">
+  <div class="flex flex-col gap-20 text-4xl font-extrabold items-center px-10">
     <div>
       <p>
         Explore Our Community of Very Qualified and Incredibly Skilled Tutors

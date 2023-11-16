@@ -6,7 +6,7 @@
         Learning Fun
       </p>
 
-      <p>
+      <p class="text-2xl lg:text-inherit">
         Our qualified tutors are equiped with the right tools and skillset required to move your learning to the next level.
         We remove the pressure and pain associated with learning while still giving the benefits.
 
