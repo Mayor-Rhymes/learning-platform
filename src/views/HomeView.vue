@@ -2,6 +2,8 @@
 import HeroSection from "../components/HeroSection.vue";
 import Partners from "../components/Partners.vue";
 import Metric from "../components/Metric.vue";
+import TutorOptions from "../components/TutorOptions.vue";
+import Boast from "../components/Boast.vue";
 </script>
 
 <template>
@@ -10,4 +12,9 @@ import Metric from "../components/Metric.vue";
   <Partners />
 
   <Metric />
+
+  <TutorOptions />
+
+
+  <Boast />
 </template>

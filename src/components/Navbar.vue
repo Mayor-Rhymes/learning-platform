@@ -14,7 +14,7 @@ import { ChevronDown, Phone } from "lucide-vue-next";
     We Make Learning Superbly Fun and Inclusive
   </p>
   <nav
-    class="w-full hidden md:flex lg:flex p-5 items-center fixed top-0 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
+    class="w-full hidden md:flex lg:flex p-5 z-40 items-center fixed top-0 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
   >
     <router-link to="/">Designated Logo</router-link>
 
