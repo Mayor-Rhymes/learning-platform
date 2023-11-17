@@ -9,7 +9,7 @@
     </div>
 
     <div
-      class="flex justify-evenly bg-black text-xl py-12 px-12 gap-20 text-white rounded-lg"
+      class="flex flex-col lg:flex-row justify-evenly bg-black text-xl py-12 px-12 gap-20 text-white rounded-lg"
     >
       <div class="flex flex-col items-center justify-center">
         <p class="text-center">10k+</p>

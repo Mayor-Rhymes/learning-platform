@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { ChevronDown, Phone } from "lucide-vue-next";
-import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <RouterLink
+  <router-link
     to="/"
     class="lg:hidden md:hidden block mt-5 text-center text-blue-700 text-4xl font-bold"
   >
     Designated Logo
-  </RouterLink>
+  </router-link>
 
   <p class="lg:hidden md:hidden text-xl block text-center">
     We Make Learning Superbly Fun and Inclusive
@@ -17,7 +16,7 @@ import { RouterLink } from "vue-router";
   <nav
     class="w-full hidden md:flex lg:flex p-5 items-center fixed top-0 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
   >
-    <RouterLink to="/">Designated Logo</RouterLink>
+    <router-link to="/">Designated Logo</router-link>
 
     <div>
       <p
@@ -39,13 +38,13 @@ import { RouterLink } from "vue-router";
       <Phone /> Contact us
     </div>
 
-    <RouterLink
+    <router-link
       active-class="bg-gray-200 rounded-md"
       to="/about"
       class="flex active:bg-gray-200 active:rounded-md items-center p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
     >
       About
-    </RouterLink>
+    </router-link>
 
     <div
       class="flex items-center p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
