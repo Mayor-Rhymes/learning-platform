@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
    import HeroSection from "../components/HeroSection.vue";
    import Partners from "../components/Partners.vue";
