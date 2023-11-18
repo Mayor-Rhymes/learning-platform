@@ -6,7 +6,7 @@ import {
   ChevronRightCircle,
 } from "lucide-vue-next";
 import { testimonials } from "../lib/mockTestimonials";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const slidePosition = ref(0);
 
@@ -25,6 +25,10 @@ const handleDecrease = () => {
     slidePosition.value = testimonials.length - 1;
   }
 };
+
+onMounted(() => {
+  setInterval(handleIncrease, 3000);
+});
 </script>
 
 <template>
@@ -138,6 +142,7 @@ const handleDecrease = () => {
         :size="50"
         class="hidden lg:block cursor-pointer"
       />
+
       <div
         class="flex flex-col gap-4 items-center transition-all delay-75 duration-100"
         @touchstart="handleDecrease"
@@ -157,6 +162,7 @@ const handleDecrease = () => {
 
         <p>{{ testimonials[slidePosition].location }}</p>
       </div>
+
       <div class="flex gap-4">
         <ChevronLeftCircle
           @click="handleDecrease"
@@ -178,3 +184,5 @@ const handleDecrease = () => {
     </div>
   </div>
 </template>
+
+
