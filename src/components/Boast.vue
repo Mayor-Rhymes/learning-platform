@@ -22,8 +22,23 @@ import { PersonStanding } from "lucide-vue-next";
           pivotal exams.
         </p>
 
+        <ul class="flex flex-col px-10 gap-5 list-none text-lg">
+          <li class="flex items-center gap-4">
+            <img src="../assets/checkmark.svg" alt="wish" /> Learn with top 1%
+            of vetted tutors
+          </li>
+          <li class="flex items-center gap-4">
+            <img src="../assets/checkmark.svg" alt="wish" /> We cover all exams
+            and curriculas
+          </li>
+          <li class="flex items-center gap-4">
+            <img src="../assets/checkmark.svg" alt="wish" /> Tutors come to your
+            home or online
+          </li>
+        </ul>
+
         <button
-          class="bg-blue-600 rounded-lg px-6 py-4 flex gap-3 justify-center lg:w-72 items-center"
+          class="bg-blue-600 rounded-lg px-6 py-4 font-bold flex gap-3 justify-center lg:w-72 items-center"
         >
           <PersonStanding /> Get a Professional Tutor
         </button>
@@ -58,5 +73,36 @@ import { PersonStanding } from "lucide-vue-next";
     <h5 class="text-2xl font-extrabold text-center">
       Our students outperform their peers by a massive amount.
     </h5>
+
+    <div class="flex flex-col lg:flex-row lg:justify-center">
+      <img src="../assets/564.png" alt="tutorial" />
+
+      <div class="flex flex-col gap-10">
+        <h5 class="text-lg font-extrabold text-center">
+          Our Innovative Approach Ensures Your Child Achieves Stellar Results
+        </h5>
+
+        <ul class="flex flex-col px-10 gap-5 list-none text-lg">
+          <li class="flex items-center gap-4">
+            <img src="../assets/checkmark.svg" alt="wish" /> Learn with top 1%
+            of vetted tutors
+          </li>
+          <li class="flex items-center gap-4">
+            <img src="../assets/checkmark.svg" alt="wish" /> We cover all exams
+            and curriculas
+          </li>
+          <li class="flex items-center gap-4">
+            <img src="../assets/checkmark.svg" alt="wish" /> Tutors come to your
+            home or online
+          </li>
+        </ul>
+
+        <button
+          class="bg-blue-600 rounded-lg px-6 py-4 font-bold flex gap-3 justify-center lg:w-72 items-center"
+        >
+          Get Started Today
+        </button>
+      </div>
+    </div>
   </div>
 </template>

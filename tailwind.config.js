@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      
+        listStyleImage: {
+          checkmark: 'url("/src/assets/checkmark.svg")'
+        }
+      
+      
+    },
   },
   plugins: [],
 }
