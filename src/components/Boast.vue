@@ -11,16 +11,12 @@ import { ref } from "vue";
 const slidePosition = ref(0);
 
 const handleIncrease = () => {
-  if (slidePosition.value < testimonials.length-1) {
+  if (slidePosition.value < testimonials.length - 1) {
     slidePosition.value++;
   } else {
     slidePosition.value = 0;
-
   }
-
-  console.log(slidePosition.value);
 };
-
 
 const handleDecrease = () => {
   if (slidePosition.value > 0) {
@@ -134,8 +130,14 @@ const handleDecrease = () => {
       </div>
     </div>
 
-    <div class="flex flex-col gap-10 lg:gap-0 lg:flex-row justify-center py-20 items-center lg:w-[80%] lg:mx-auto">
-      <ChevronLeftCircle @click="handleDecrease" :size="50" class="hidden lg:block" />
+    <div
+      class="flex flex-col gap-10 lg:gap-0 lg:flex-row justify-center py-20 items-center lg:w-[80%] lg:mx-auto"
+    >
+      <ChevronLeftCircle
+        @click="handleDecrease"
+        :size="50"
+        class="hidden lg:block cursor-pointer"
+      />
       <div
         class="flex flex-col gap-4 items-center transition-all delay-75 duration-100"
         @touchstart="handleDecrease"
@@ -156,11 +158,23 @@ const handleDecrease = () => {
         <p>{{ testimonials[slidePosition].location }}</p>
       </div>
       <div class="flex gap-4">
-        <ChevronLeftCircle @click="handleDecrease" class="block lg:hidden" :size="50"/>
-        <ChevronRightCircle @click="handleIncrease" class="block lg:hidden" :size="50"/>
+        <ChevronLeftCircle
+          @click="handleDecrease"
+          class="block lg:hidden cursor-pointer"
+          :size="50"
+        />
+        <ChevronRightCircle
+          @click="handleIncrease"
+          class="block lg:hidden cursor-pointer"
+          :size="50"
+        />
       </div>
       <!-- <ChevronLeftCircle @click="handleDecrease" class="block lg:hidden" /> -->
-      <ChevronRightCircle @click="handleIncrease" class="hidden lg:block" :size="50"/>
+      <ChevronRightCircle
+        @click="handleIncrease"
+        class="hidden lg:block cursor-pointer"
+        :size="50"
+      />
     </div>
   </div>
 </template>
