@@ -1,5 +1,34 @@
 <script setup lang="ts">
-import { PersonStanding } from "lucide-vue-next";
+import {
+  PersonStanding,
+  ChevronLeftCircle,
+  Star,
+  ChevronRightCircle,
+} from "lucide-vue-next";
+import { testimonials } from "../lib/mockTestimonials";
+import { ref } from "vue";
+
+const slidePosition = ref(0);
+
+const handleIncrease = () => {
+  if (slidePosition.value < testimonials.length-1) {
+    slidePosition.value++;
+  } else {
+    slidePosition.value = 0;
+
+  }
+
+  console.log(slidePosition.value);
+};
+
+
+const handleDecrease = () => {
+  if (slidePosition.value > 0) {
+    slidePosition.value--;
+  } else {
+    slidePosition.value = testimonials.length - 1;
+  }
+};
 </script>
 
 <template>
@@ -103,6 +132,35 @@ import { PersonStanding } from "lucide-vue-next";
           Get Started Today
         </button>
       </div>
+    </div>
+
+    <div class="flex flex-col gap-10 lg:gap-0 lg:flex-row justify-center py-20 items-center lg:w-[80%] lg:mx-auto">
+      <ChevronLeftCircle @click="handleDecrease" :size="50" class="hidden lg:block" />
+      <div
+        class="flex flex-col gap-4 items-center transition-all delay-75 duration-100"
+        @touchstart="handleDecrease"
+      >
+        <p class="text-center text-lg">
+          {{ testimonials[slidePosition].content }}
+        </p>
+        <p>{{ testimonials[slidePosition].author }}</p>
+        <div class="flex flex-row gap-4">
+          <Star
+            v-for="_ in testimonials[slidePosition].rating"
+            color="yellow"
+            enable-background="true"
+            fill="yellow"
+          />
+        </div>
+
+        <p>{{ testimonials[slidePosition].location }}</p>
+      </div>
+      <div class="flex gap-4">
+        <ChevronLeftCircle @click="handleDecrease" class="block lg:hidden" :size="50"/>
+        <ChevronRightCircle @click="handleIncrease" class="block lg:hidden" :size="50"/>
+      </div>
+      <!-- <ChevronLeftCircle @click="handleDecrease" class="block lg:hidden" /> -->
+      <ChevronRightCircle @click="handleIncrease" class="hidden lg:block" :size="50"/>
     </div>
   </div>
 </template>
