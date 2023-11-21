@@ -2,7 +2,7 @@
 
 
 <template>
-   <div className="flex gap-4 justify-evenly items-center text-sm bg-black text-white py-6">
+   <div className="flex flex-col lg:flex-row gap-10 lg:gap-4 justify-evenly items-center text-sm bg-black text-white py-6">
 
 
        <div className="flex flex-col gap-4 items-center">
