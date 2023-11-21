@@ -1,12 +1,12 @@
 <template>
-  <div class="flex flex-col lg:flex-row mx-auto p-12 w-[90%] rounded-md items-center justify-center gap-20 bg-[whitesmoke]">
+  <div class="flex flex-col lg:flex-row mx-auto p-4 md:p-12 lg:w-[90%] rounded-md justify-center gap-20 bg-[whitesmoke]">
     <div class="flex flex-col gap-5">
-      <p class="text-2xl lg:text-5xl font-bold leading-relaxed">
+      <p class="text-2xl lg:text-3xl font-bold leading-relaxed">
         Learning Should not be Hard or Sad. It should be Fun. Let us Make Your
         Learning Fun
       </p>
 
-      <p class="text-2xl lg:text-inherit">
+      <p class="text-lg">
         Our qualified tutors are equiped with the right tools and skillset required to move your learning to the next level.
         We remove the pressure and pain associated with learning while still giving the benefits.
 
@@ -19,7 +19,7 @@
     <img
       src="../assets/hero-image.jpg"
       alt="Teacher"
-      class="w-2/3 h-2/3 rounded-lg"
+      class="w-[100%] lg:w-2/3 lg:h-2/3 rounded-lg"
     />
   </div>
 </template>
