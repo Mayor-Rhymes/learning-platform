@@ -7,7 +7,7 @@ import "@splidejs/vue-splide/css";
 
 <template>
   <div class="bg-[#002769] flex flex-col gap-10 px-4 py-20 text-white">
-    <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-col gap-20 lg:flex-row">
       <div class="flex flex-col p-2 gap-10">
         <p class="text-xl text-yellow-400">
           Our approach to tutoring is both scientifically and anecdotally
@@ -27,16 +27,16 @@ import "@splidejs/vue-splide/css";
 
         <ul class="flex flex-col lg:px-10 gap-5 list-none text-lg">
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark.svg" alt="wish" /> Learn with top 1%
-            of vetted tutors
+            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            Learn with top 1% of vetted tutors
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark.svg" alt="wish" /> We cover all exams
-            and curriculas
+            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            We cover all exams and curriculas
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark.svg" alt="wish" /> Tutors come to your
-            home or online
+            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            Tutors come to your home or online
           </li>
         </ul>
 
@@ -47,28 +47,18 @@ import "@splidejs/vue-splide/css";
         </button>
       </div>
 
-      <div class="flex gap-5 flex-wrap justify-center">
-        <img
-          src="../assets/student-boy.jpg"
-          alt="student-boy"
-          class="rounded-md h-28 w-28 lg:h-72 lg:w-56"
-        />
-        <img
-          src="../assets/student-boy-2.jpg"
-          alt="student-boy-2"
-          class="rounded-md h-40 w-40 lg:h-72 lg:w-56"
-        />
-        <img
-          src="../assets/student-girl.jpg"
-          alt="student-girl"
-          class="rounded-md h-28 w-28 lg:h-32 lg:w-32"
-        />
-        <img
-          src="../assets/student-boy.jpg"
-          alt="student-boy"
-          class="rounded-md h-28 w-28 lg:h-72 lg:w-56"
-        />
-      </div>
+      <!-- <div class="grid grid-cols-2 justify-center">
+        <img src="../assets/student-boy.jpg" alt="student-boy" class="rounded-md lg:h-72 lg:w-72"/>
+        <img src="../assets/student-boy-2.jpg" alt="student-boy-2" class="rounded-md lg:h-72 lg:w-72"/>
+        <img src="../assets/student-girl.jpg" alt="student-girl" class="rounded-md lg:h-72 lg:w-72"/>
+        <img src="../assets/student-boy.jpg" alt="student-boy" class="rounded-md lg:h-72 lg:w-72"/>
+      </div> -->
+
+      <img
+        src="../assets/student_image_group.jpg"
+        alt="student_image_group"
+        class="rounded-md h-2/3 w-full lg:h-[40%] lg:w-[40%]"
+      />
     </div>
 
     <p class="text-xl text-center text-yellow-300">We always deliver!!!</p>
@@ -87,16 +77,16 @@ import "@splidejs/vue-splide/css";
 
         <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark.svg" alt="wish" /> Learn with top 1%
-            of vetted tutors
+            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            Learn with top 1% of vetted tutors
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark.svg" alt="wish" /> We cover all exams
-            and curriculas
+            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            We cover all exams and curriculas
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark.svg" alt="wish" /> Tutors come to your
-            home or online
+            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            Tutors come to your home or online
           </li>
         </ul>
 
@@ -162,4 +152,4 @@ import "@splidejs/vue-splide/css";
   </div>
 </template>
 
-
+<!-- class="rounded-md h-40 w-40 lg:h-72 lg:w-56" -->

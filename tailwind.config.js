@@ -8,7 +8,10 @@ export default {
     extend: {
       
         listStyleImage: {
-          checkmark: 'url("/src/assets/checkmark.svg")'
+          checkmark: 'url("/src/assets/checkmark2.png")',
+        },
+        backgroundImage: {
+           groupbg: 'url("/src/assets/group-photo.jpg")',
         }
       
       

@@ -2,7 +2,7 @@
 import HeroSection from "../components/HeroSection.vue";
 import Partners from "../components/Partners.vue";
 import Metric from "../components/Metric.vue";
-import TutorOptions from "../components/TutorOptions.vue";
+// import TutorOptions from "../components/TutorOptions.vue";
 import Boast from "../components/Boast.vue";
 import ExamTile from "../components/ExamTile.vue";
 </script>
@@ -14,9 +14,9 @@ import ExamTile from "../components/ExamTile.vue";
 
   <Metric />
 
-  <TutorOptions />
-  
-
+  <!-- <div class="h-[600px] w-full bg-groupbg bg-cover bg-center">
+    
+  </div> -->
 
   <Boast />
 

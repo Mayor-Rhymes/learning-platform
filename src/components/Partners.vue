@@ -6,22 +6,22 @@
       <img
         src="../assets/forbes_logo.png"
         alt="forbes"
-        class="w-[70px] h-[50px]"
+        class="w-[40px] h-[20px]"
       />
       <img
         src="../assets/forbes_logo.png"
         alt="forbes"
-        class="w-[70px] h-[50px]"
+        class="w-[40px] h-[20px]"
       />
       <img
         src="../assets/forbes_logo.png"
         alt="forbes"
-        class="w-[70px] h-[50px]"
+        class="w-[40px] h-[20px]"
       />
       <img
         src="../assets/forbes_logo.png"
         alt="forbes"
-        class="w-[70px] h-[50px]"
+        class="w-[40px] h-[20px]"
       />
     </div>
   </div>
