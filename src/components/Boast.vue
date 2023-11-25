@@ -19,10 +19,11 @@ import "@splidejs/vue-splide/css";
         </h5>
 
         <p>
-          We work with you to ensure your kids excel at every stage of their
-          learning journey whether it's building early foundations, helping with
-          homework, getting better grades, mastering their subjects or passing
-          pivotal exams.
+          Collaborating with you, we strive to support your children in
+          excelling through every phase of their educational journey—be it
+          establishing fundamental skills, assisting with homework, achieving
+          higher grades, mastering subjects, or successfully navigating pivotal
+          exams.
         </p>
 
         <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">

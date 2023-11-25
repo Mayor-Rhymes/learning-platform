@@ -7,7 +7,7 @@ import { ChevronDown, Phone } from "lucide-vue-next";
     to="/"
     class="lg:hidden md:hidden block mt-5 text-center text-blue-700 text-4xl font-bold"
   >
-    Designated Logo
+    Frithland
   </router-link>
 
   <p class="lg:hidden md:hidden text-xl block text-center">
@@ -16,7 +16,7 @@ import { ChevronDown, Phone } from "lucide-vue-next";
   <nav
     class="w-full hidden md:flex lg:flex p-5 z-40 items-center fixed top-0 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
   >
-    <router-link to="/">Designated Logo</router-link>
+    <router-link to="/" class="text-blue-500 text-xl">Frithland</router-link>
 
     <div>
       <p
