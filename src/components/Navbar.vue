@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChevronDown, Phone } from "lucide-vue-next";
+import { ChevronDown, Phone, PersonStanding } from "lucide-vue-next";
 </script>
 
 <template>
@@ -26,12 +26,17 @@ import { ChevronDown, Phone } from "lucide-vue-next";
       </p>
     </div>
 
-    <input
+    <!-- <input
       type="text"
       class="w-[400px] place-self-stretch hidden lg:block md:hidden outline-none h-[50px] rounded-xl p-4 bg-slate-200"
       placeholder="Search For a service"
-    />
+    /> -->
 
+    <div
+      class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
+    >
+      <PersonStanding /> Request A Tutor
+    </div>
     <div
       class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
     >
@@ -52,9 +57,9 @@ import { ChevronDown, Phone } from "lucide-vue-next";
       Login
     </div>
   </nav>
-  <input
+  <!-- <input
     type="text"
     class="w-[70%] mx-auto text-xl placeholder-black lg:hidden block md:block outline-none h-[50px] rounded-xl p-4 bg-slate-200"
     placeholder="Search For a service"
-  />
+  /> -->
 </template>
