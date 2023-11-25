@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Home, Headphones, Server, LogIn } from "lucide-vue-next";
+import { Home, Headphones } from "lucide-vue-next";
 </script>
 
 <template>
@@ -14,14 +14,14 @@ import { Home, Headphones, Server, LogIn } from "lucide-vue-next";
       <Home />
       <p>Home</p>
     </router-link>
-    <router-link
+    <!-- <router-link
       active-class="text-blue-400"
       to="/about"
       class="flex cursor-pointer gap-1 justify-center items-center flex-col"
     >
       <Server />
       <p>Services</p>
-    </router-link>
+    </router-link> -->
     <router-link
       active-class="text-blue-400"
       to="/contact"
@@ -30,13 +30,13 @@ import { Home, Headphones, Server, LogIn } from "lucide-vue-next";
       <Headphones />
       <p>Call us</p>
     </router-link>
-    <router-link
+    <!-- <router-link
       active-class="text-blue-400"
       to="/login"
       class="flex cursor-pointer gap-1 justify-center items-center flex-col"
     >
       <LogIn />
       <p>Login</p>
-    </router-link>
+    </router-link> -->
   </nav>
 </template>

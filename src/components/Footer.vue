@@ -9,8 +9,7 @@
          <p className="text-gray-300 font-bold">Parents</p>
 
          <router-link to="/">Home Tutoring</router-link>
-         <router-link to="/">Home Tutoring</router-link>
-         <router-link to="/">Home Tutoring</router-link>
+         
        </div>
        <div className="flex flex-col gap-4 items-center">
          <p className="text-gray-300 font-bold">Tutors</p>
@@ -22,9 +21,9 @@
        <div className="flex flex-col gap-4 items-center">
          <p className="text-gray-300 font-bold">Company</p>
 
-         <router-link to="/">Careers</router-link>
+         <!-- <router-link to="/">Careers</router-link> -->
          <router-link to="/">Contact Us</router-link>
-         <router-link to="/">Safety Guide</router-link>
+         <!-- <router-link to="/">Safety Guide</router-link> -->
        </div>
    </div>
 
