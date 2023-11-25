@@ -72,7 +72,7 @@ import "@splidejs/vue-splide/css";
 
       <div class="flex flex-col gap-10">
         <h5 class="text-lg font-extrabold text-center">
-          Our Innovative Approach Ensures Your Child Achieves Stellar Results
+          We Teach Effectively To Ensure That Our Students Reach For The Moon
         </h5>
 
         <!-- <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">
