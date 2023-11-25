@@ -25,18 +25,18 @@ import "@splidejs/vue-splide/css";
           pivotal exams.
         </p>
 
-        <ul class="flex flex-col lg:px-10 gap-5 list-none text-lg">
+        <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">
           <li class="flex items-center gap-4">
             <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
-            Learn with top 1% of vetted tutors
+            Learn from super capable and experienced tutors
           </li>
           <li class="flex items-center gap-4">
             <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
-            We cover all exams and curriculas
+            We teach at your convenience.
           </li>
           <li class="flex items-center gap-4">
             <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
-            Tutors come to your home or online
+            Our teaching materials are up to date
           </li>
         </ul>
 
@@ -75,20 +75,20 @@ import "@splidejs/vue-splide/css";
           Our Innovative Approach Ensures Your Child Achieves Stellar Results
         </h5>
 
-        <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">
+        <!-- <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">
           <li class="flex items-center gap-4">
             <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
-            Learn with top 1% of vetted tutors
+            Learn from super capable and experienced tutors
           </li>
           <li class="flex items-center gap-4">
             <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
-            We cover all exams and curriculas
+            We teach at your convenience.
           </li>
           <li class="flex items-center gap-4">
             <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
-            Tutors come to your home or online
+            Our teaching materials are up to date
           </li>
-        </ul>
+        </ul> -->
 
         <button
           class="bg-blue-600 rounded-lg px-6 py-4 font-bold flex gap-3 justify-center lg:w-72 items-center"
