@@ -12,6 +12,7 @@ export default {
         },
         backgroundImage: {
            groupbg: 'url("/src/assets/group-photo.jpg")',
+           aboutbg: 'url("/src/assets/about.jpg")',
         }
       
       
