@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { PersonStanding, Star } from "lucide-vue-next";
+import {
+  PersonStanding,
+  Star,
+  CheckCircle2Icon,
+  Check,
+  CheckCircle,
+} from "lucide-vue-next";
 import { testimonials } from "../lib/mockTestimonials";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/vue-splide/css";
@@ -28,15 +34,17 @@ import "@splidejs/vue-splide/css";
 
         <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            <CheckCircle fill="gold" />
             Learn from super capable and experienced tutors
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            <!-- <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" /> -->
+            <CheckCircle fill="gold" />
             We teach at your convenience.
           </li>
           <li class="flex items-center gap-4">
-            <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" />
+            <!-- <img src="../assets/checkmark2.png" alt="wish" class="h-10 w-10" /> -->
+            <CheckCircle fill="gold" />
             Our teaching materials are up to date
           </li>
         </ul>
