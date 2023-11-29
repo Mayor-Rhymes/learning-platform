@@ -2,6 +2,13 @@
 import { Phone, PersonStanding } from "lucide-vue-next";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { ChevronDown } from "lucide-vue-next";
+import { ref } from "vue";
+import { ChevronUp } from "lucide-vue-next";
+const visible = ref(false);
+
+const handleVisibility = () => {
+  visible.value = !visible;
+};
 </script>
 
 <template>
@@ -29,9 +36,25 @@ import { ChevronDown } from "lucide-vue-next";
     </router-link>
 
     <Menu as="div" class="relative">
-      <MenuButton class="flex items-center"
-        >Our Services <ChevronDown
-      /></MenuButton>
+      <MenuButton
+        class="flex items-center hover:bg-gray-200 p-2 rounded"
+        @click="handleVisibility"
+        >Our Services
+        <transition
+          enter-from-class="transform scale-95 opacity-0"
+          enter-to-class="transform scale-100 opacity-100"
+          leave-from-class="transform scale-100 opacity-100"
+          leave-to-class="transform scale-95 opacity-0"
+        >
+          <ChevronDown v-if="!visible" />
+        </transition>
+        <transition
+          enter-from-class="transform scale-95 opacity-0"
+          enter-to-class="transform scale-100 opacity-100"
+        >
+          <ChevronUp v-if="visible" />
+        </transition>
+      </MenuButton>
       <transition
         enter-active-class="transition duration-100 ease-out"
         enter-from-class="transform scale-95 opacity-0"
@@ -43,7 +66,9 @@ import { ChevronDown } from "lucide-vue-next";
         <MenuItems
           class="inline-flex flex-col gap-5 absolute top-10 w-[400px] rounded-md p-10 shadow-lg bg-white"
         >
-          <MenuItem class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150">
+          <MenuItem
+            class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
+          >
             <router-link
               to="/tutor"
               active-class="bg-blue-400"
@@ -52,7 +77,9 @@ import { ChevronDown } from "lucide-vue-next";
               Request A Tutor
             </router-link>
           </MenuItem>
-          <MenuItem class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150">
+          <MenuItem
+            class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
+          >
             <router-link
               to="/exam"
               active-class="bg-blue-400"
@@ -61,7 +88,9 @@ import { ChevronDown } from "lucide-vue-next";
               Search For An Exam
             </router-link>
           </MenuItem>
-          <MenuItem class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150">
+          <MenuItem
+            class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
+          >
             <router-link
               to="/exam"
               active-class="bg-blue-400"
