@@ -39,7 +39,7 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5 justify-evenly items-center gap-10"
     >
       <div
-        class="flex flex-col gap-5 items-center lg:h-[500px] justify-center rounded-md border cursor-pointer transition-all duration-300 ease-in-out p-10 delay-300 shadow-md hover:shadow-fuchsia-400 hover:-translate-y-4 group"
+        class="flex flex-col gap-5 items-center lg:h-[500px]  justify-center rounded-2xl border border-b-[10px] border-b-fuchsia-500 cursor-pointer transition-all duration-300 ease-in-out p-10 delay-300 shadow-md hover:shadow-fuchsia-400 hover:-translate-y-4 group"
       >
         <h6 class="text-lg font-bold group-hover:text-fuchsia-600 transition-all duration-200 delay-200 ease-in-out">Our Mission</h6>
         <ul class="list-disc flex flex-col gap-3 group-hover:text-blue-400 transition-all duration-200 delay-200 ease-in-out">
@@ -59,7 +59,7 @@
         </ul>
       </div>
       <div
-        class="group flex flex-col gap-5 items-center lg:h-[500px] justify-center rounded-md border cursor-pointer transition-all duration-300 ease-in-out p-10 delay-300 shadow-md hover:shadow-fuchsia-400 hover:-translate-y-4"
+        class="group flex flex-col gap-5 items-center lg:h-[500px] justify-center rounded-2xl border border-b-[10px] border-b-fuchsia-500 cursor-pointer transition-all duration-300 ease-in-out p-10 delay-300 shadow-md hover:shadow-fuchsia-400 hover:-translate-y-4"
       >
         <h6 class="text-lg font-bold group-hover:text-fuchsia-600 transition-all duration-200 delay-200 ease-in-out">Our Vision</h6>
         <ul class="list-disc flex flex-col gap-3 group-hover:text-blue-400 transition-all duration-200 delay-200 ease-in-out">
@@ -81,7 +81,7 @@
         </ul>
       </div>
       <div
-        class="group flex flex-col gap-5 items-center lg:h-[500px] justify-center rounded-md border cursor-pointer transition-all duration-300 ease-in-out p-10 delay-300 shadow-md hover:shadow-fuchsia-400 hover:-translate-y-4"
+        class="group flex flex-col gap-5 items-center lg:h-[500px] justify-center rounded-2xl border border-b-[10px] border-b-fuchsia-500  cursor-pointer transition-all duration-300 ease-in-out p-10 delay-300 shadow-md hover:shadow-fuchsia-400 hover:-translate-y-4"
       >
         <h6 class="text-lg font-bold group-hover:text-fuchsia-600 transition-all duration-200 delay-200 ease-in-out">Our Goals</h6>
         <ul class="list-disc flex flex-col gap-3 group-hover:text-blue-400 transition-all duration-200 delay-200 ease-in-out">

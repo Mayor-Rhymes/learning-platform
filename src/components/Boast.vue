@@ -2,8 +2,6 @@
 import {
   PersonStanding,
   Star,
-  CheckCircle2Icon,
-  Check,
   CheckCircle,
 } from "lucide-vue-next";
 import { testimonials } from "../lib/mockTestimonials";
