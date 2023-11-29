@@ -43,7 +43,7 @@ import { ChevronDown } from "lucide-vue-next";
         <MenuItems
           class="inline-flex flex-col gap-5 absolute top-10 w-[400px] rounded-md p-10 shadow-lg bg-white"
         >
-          <MenuItem class="p-4">
+          <MenuItem class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150">
             <router-link
               to="/tutor"
               active-class="bg-blue-400"
@@ -52,7 +52,7 @@ import { ChevronDown } from "lucide-vue-next";
               Request A Tutor
             </router-link>
           </MenuItem>
-          <MenuItem class="p-4">
+          <MenuItem class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150">
             <router-link
               to="/exam"
               active-class="bg-blue-400"
@@ -61,7 +61,7 @@ import { ChevronDown } from "lucide-vue-next";
               Search For An Exam
             </router-link>
           </MenuItem>
-          <MenuItem class="p-4">
+          <MenuItem class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150">
             <router-link
               to="/exam"
               active-class="bg-blue-400"
