@@ -7,7 +7,8 @@ import { ChevronUp } from "lucide-vue-next";
 const visible = ref(false);
 
 const handleVisibility = () => {
-  visible.value = !visible;
+  visible.value = !visible.value;
+  console.log(visible.value);
 };
 </script>
 
@@ -47,13 +48,11 @@ const handleVisibility = () => {
           leave-to-class="transform scale-95 opacity-0"
         >
           <ChevronDown v-if="!visible" />
+          <ChevronUp v-else />
         </transition>
-        <transition
-          enter-from-class="transform scale-95 opacity-0"
-          enter-to-class="transform scale-100 opacity-100"
-        >
-          <ChevronUp v-if="visible" />
-        </transition>
+       
+          
+        
       </MenuButton>
       <transition
         enter-active-class="transition duration-100 ease-out"
