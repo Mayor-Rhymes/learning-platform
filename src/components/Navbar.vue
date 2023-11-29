@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ChevronDown, Phone, PersonStanding } from "lucide-vue-next";
+import { Phone, PersonStanding } from "lucide-vue-next";
+import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 </script>
 
 <template>
@@ -26,13 +27,43 @@ import { ChevronDown, Phone, PersonStanding } from "lucide-vue-next";
       <!-- <p>Frithland</p> -->
     </router-link>
 
-    <div>
-      <p
+    <Menu as="div" class="relative">
+      <!-- <div> -->
+      <!-- <p
         class="flex items-center p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
       >
         Our Services <ChevronDown />
-      </p>
-    </div>
+      </p> -->
+
+      <MenuButton>Our Services</MenuButton>
+      <transition
+        enter-active-class="transition duration-100 ease-out"
+        enter-from-class="transform scale-95 opacity-0"
+        enter-to-class="transform scale-100 opacity-100"
+        leave-active-class="transition duration-75 ease-in"
+        leave-from-class="transform scale-100 opacity-100"
+        leave-to-class="transform scale-95 opacity-0"
+      >
+      <MenuItems class="inline-flex flex-col gap-5 absolute top-10 w-[400px] rounded-md p-10 shadow-lg bg-white">
+        <MenuItem class="p-4">
+          <router-link to="/tutor" active-class="bg-blue-400" class="hover:bg-blue-500">
+            Request A Tutor
+          </router-link>
+        </MenuItem>
+        <MenuItem class="p-4">
+          <router-link to="/exam" active-class="bg-blue-400" class="hover:bg-blue-500">
+            Search For An Exam
+          </router-link>
+        </MenuItem>
+        <MenuItem class="p-4">
+          <router-link to="/exam" active-class="bg-blue-400" class="hover:bg-blue-500">
+            Learn more about us
+          </router-link>
+        </MenuItem>
+      </MenuItems>
+    </transition>
+    </Menu>
+    <!-- </div> -->
 
     <div
       class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
