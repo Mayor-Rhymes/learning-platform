@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Navbar from "./components/Navbar.vue";
-import MobileNav from "./components/MobileNav.vue";
+// import MobileNav from "./components/MobileNav.vue";
 import Footer from "./components/Footer.vue";
 </script>
 
@@ -11,6 +11,6 @@ import Footer from "./components/Footer.vue";
     <Navbar />
     <router-view />
     <Footer />
-    <MobileNav />
+    <!-- <MobileNav /> -->
   </div>
 </template>
