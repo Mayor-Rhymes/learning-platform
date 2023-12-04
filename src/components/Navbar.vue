@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Phone, PersonStanding, MenuIcon } from "lucide-vue-next";
+import { Phone, PersonStanding, MenuIcon, XCircleIcon } from "lucide-vue-next";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { ChevronDown } from "lucide-vue-next";
 import { ref } from "vue";
-import { ChevronUp } from "lucide-vue-next";
+import { ChevronUp, ShieldQuestionIcon } from "lucide-vue-next";
 const visible = ref(false);
 const menuVisible = ref(false);
 
@@ -18,7 +18,7 @@ const handleMenuVisibility = () => {
 </script>
 
 <template>
-  <div class="lg:hidden md:hidden flex justify-between items-center h-[80px]">
+  <div class="lg:hidden md:hidden px-5 flex justify-between items-center h-[80px]">
     <router-link
       to="/"
       class="lg:hidden md:hidden flex items-center justify-center text-center text-blue-700 text-4xl font-bold"
@@ -31,7 +31,17 @@ const handleMenuVisibility = () => {
       <!-- <p>Frithland</p> -->
     </router-link>
 
-    <MenuIcon @click="handleMenuVisibility" />
+    <Transition
+      enter-active-class="transition duration-100 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-75 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+    >
+      <MenuIcon v-if="!menuVisible" @click="handleMenuVisibility" />
+      <XCircleIcon v-else="menuVisible" @click="handleMenuVisibility" />
+    </Transition>
   </div>
   <Transition
     enter-active-class="transition duration-100 ease-out"
@@ -47,7 +57,7 @@ const handleMenuVisibility = () => {
     >
       <Menu
         as="div"
-        class="flex items-center gap-2 p-2 justify-center hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150 relative"
+        class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150 relative"
       >
         <MenuButton
           class="flex items-center hover:bg-gray-200 p-2 rounded"
@@ -91,14 +101,14 @@ const handleMenuVisibility = () => {
 
       <router-link
         to="/tutor"
-        class="flex items-center gap-2 p-2 justify-center hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
+        class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
       >
         <PersonStanding /> Request A Tutor
       </router-link>
       <router-link
         active-class="bg-gray-200 rounded-md"
         to="/contact"
-        class="flex items-center gap-2 p-2 justify-center hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
+        class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
       >
         <Phone /> Contact us
       </router-link>
@@ -106,9 +116,9 @@ const handleMenuVisibility = () => {
       <router-link
         active-class="bg-gray-200 rounded-md"
         to="/about"
-        class="flex active:bg-gray-200 justify-center active:rounded-md items-center p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
+        class="flex active:bg-gray-200 gap-2 active:rounded-md items-center p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
       >
-        About
+        <ShieldQuestionIcon /> About
       </router-link>
     </nav>
   </Transition>

@@ -16,7 +16,7 @@ import { Mail, Twitter, Phone } from "lucide-vue-next";
           fill="red"
           class="hover:scale-125 transition-all duration-150 delay-150 ease-in-out"
         />
-        <p>Mail Us</p>
+        <a href="mailto:olaks.raheem@gmail.com?subject=Frithland Contact&body=I will like to get all important information regarding your schedule">Mail Us</a>
       </div>
       <div class="flex flex-col gap-5 items-center justify-center cursor-pointer">
         <Phone
