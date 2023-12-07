@@ -1,6 +1,6 @@
 <template>
   <div
-    className="flex flex-col lg:flex-row gap-10 lg:gap-4 justify-evenly items-center text-sm bg-black text-white py-6"
+    className="flex flex-col w-full lg:flex-row gap-10 lg:gap-4 justify-evenly items-center text-sm bg-black text-white py-20"
   >
     <div className="flex flex-col gap-4 items-center">
       <p className="text-gray-300 font-bold">Parents</p>

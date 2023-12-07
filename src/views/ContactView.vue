@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { Mail, Twitter, Phone } from "lucide-vue-next";
+import { Mail, Instagram, Phone } from "lucide-vue-next";
+import Footer from "../components/Footer.vue";
 </script>
 
 <template>
@@ -10,15 +11,22 @@ import { Mail, Twitter, Phone } from "lucide-vue-next";
       need support or general enquiries? Contact us.
     </p>
     <div class="flex gap-10 justify-evenly">
-      <div class="flex flex-col gap-5 items-center justify-center cursor-pointer">
+      <div
+        class="flex flex-col gap-5 items-center justify-center cursor-pointer"
+      >
         <Mail
           :size="50"
           fill="red"
           class="hover:scale-125 transition-all duration-150 delay-150 ease-in-out"
         />
-        <a href="mailto:olaks.raheem@gmail.com?subject=Frithland Contact&body=I will like to get all important information regarding your schedule">Mail Us</a>
+        <a
+          href="mailto:frithlandeduconsult@gmail.com?subject=Frithland Contact&body=I will like to get all important information regarding your schedule"
+          >Mail Us</a
+        >
       </div>
-      <div class="flex flex-col gap-5 items-center justify-center cursor-pointer">
+      <div
+        class="flex flex-col gap-5 items-center justify-center cursor-pointer"
+      >
         <Phone
           :size="50"
           fill="green"
@@ -26,14 +34,32 @@ import { Mail, Twitter, Phone } from "lucide-vue-next";
         />
         <p>Call Us</p>
       </div>
-      <div class="flex flex-col gap-5 items-center justify-center cursor-pointer">
-        <Twitter
+      <div
+        class="flex flex-col gap-5 items-center justify-center cursor-pointer"
+      >
+        <Instagram
           :size="50"
           fill="blue"
           class="hover:scale-125 transition-all duration-150 delay-150 ease-in-out"
         />
-        <p>Reach Us On Twitter</p>
+        <p>Reach Us On Instagram</p>
       </div>
+    </div>
+
+    <div class="flex justify-between gap-10">
+      <input
+      type="text"
+      class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+      placeholder="Enter Your First Name"
+      required
+    />
+      <input
+      type="text"
+      class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+      placeholder="Enter Your Last Name"
+      required
+    />
+
     </div>
 
     <input
@@ -44,7 +70,7 @@ import { Mail, Twitter, Phone } from "lucide-vue-next";
     />
     <textarea
       class="p-4 h-[300px] border focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md resize-none"
-      placeholder="Please State Your Complaints"
+      placeholder="Drop a Message"
       required
     ></textarea>
 
@@ -55,4 +81,5 @@ import { Mail, Twitter, Phone } from "lucide-vue-next";
       SEND MESSAGE
     </button>
   </form>
+  <Footer />
 </template>

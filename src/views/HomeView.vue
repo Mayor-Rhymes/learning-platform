@@ -1,24 +1,23 @@
 <script setup lang="ts">
 import HeroSection from "../components/HeroSection.vue";
-import Partners from "../components/Partners.vue";
-import Metric from "../components/Metric.vue";
-// import TutorOptions from "../components/TutorOptions.vue";
+import Footer from "../components/Footer.vue";
+// import Partners from "../components/Partners.vue";
+// import Metric from "../components/Metric.vue";
+
 import Boast from "../components/Boast.vue";
-import ExamTile from "../components/ExamTile.vue";
+
 </script>
 
 <template>
   <HeroSection />
 
-  <Partners />
+  <!-- <Partners /> -->
 
-  <Metric />
-
-  <!-- <div class="h-[600px] w-full bg-groupbg bg-cover bg-center">
-    
-  </div> -->
+  <!-- <Metric /> -->
 
   <Boast />
 
-  <ExamTile />
+  <Footer />
+
+  <!-- <ExamTile /> -->
 </template>

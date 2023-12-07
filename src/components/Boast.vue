@@ -74,7 +74,7 @@ import "@splidejs/vue-splide/css";
       Our students outperform their peers by a massive amount.
     </h5>
 
-    <div class="flex flex-col lg:flex-row lg:justify-center">
+    <div class="flex flex-col lg:flex-row lg:justify-center lg:items-center">
       <img src="../assets/564.png" alt="tutorial" />
 
       <div class="flex flex-col gap-10">

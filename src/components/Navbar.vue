@@ -18,7 +18,9 @@ const handleMenuVisibility = () => {
 </script>
 
 <template>
-  <div class="lg:hidden md:hidden px-5 flex justify-between items-center h-[80px]">
+  <div
+    class="lg:hidden md:hidden px-5 flex justify-between items-center h-[80px]"
+  >
     <router-link
       to="/"
       class="lg:hidden md:hidden flex items-center justify-center text-center text-blue-700 text-4xl font-bold"
@@ -93,6 +95,17 @@ const handleMenuVisibility = () => {
                 class="hover:bg-blue-500"
               >
                 Request A Tutor
+              </router-link>
+            </MenuItem>
+            <MenuItem
+              class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
+            >
+              <router-link
+                to="/tutor"
+                active-class="bg-blue-400"
+                class="hover:bg-blue-500"
+              >
+                Services
               </router-link>
             </MenuItem>
           </MenuItems>
@@ -175,15 +188,27 @@ const handleMenuVisibility = () => {
               Request A Tutor
             </router-link>
           </MenuItem>
+          <MenuItem
+            class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
+          >
+            <router-link
+              to="/services"
+              active-class="bg-blue-400"
+              class="hover:bg-blue-500"
+            >
+              Services
+            </router-link>
+          </MenuItem>
         </MenuItems>
       </transition>
     </Menu>
 
-    <div
+    <router-link
+      to="/request-a-tutor"
       class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
     >
       <PersonStanding /> Request A Tutor
-    </div>
+    </router-link>
     <router-link
       active-class="bg-gray-200 rounded-md"
       to="/contact"
