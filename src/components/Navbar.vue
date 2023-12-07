@@ -90,7 +90,7 @@ const handleMenuVisibility = () => {
               class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
             >
               <router-link
-                to="/tutor"
+                to="/request-a-tutor"
                 active-class="bg-blue-400"
                 class="hover:bg-blue-500"
               >
@@ -113,7 +113,7 @@ const handleMenuVisibility = () => {
       </Menu>
 
       <router-link
-        to="/tutor"
+        to="/request-a-tutor"
         class="flex items-center gap-2 p-2 hover:bg-gray-200 hover:rounded-md cursor-pointer transition-all delay-100 duration-150"
       >
         <PersonStanding /> Request A Tutor
@@ -181,7 +181,7 @@ const handleMenuVisibility = () => {
             class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
           >
             <router-link
-              to="/tutor"
+              to="/request-a-tutor"
               active-class="bg-blue-400"
               class="hover:bg-blue-500"
             >

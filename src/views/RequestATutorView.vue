@@ -113,6 +113,7 @@ const handleDecrement = () => {
     </RadioGroup>
   </div>
 
+  
   <button
     class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
     v-on:click="step++"
