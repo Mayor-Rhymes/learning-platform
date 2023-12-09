@@ -40,7 +40,7 @@ import {
       <CategoryCard title="Safety First" description="yes">
         <p>
           Frithland educational consult sets high safety standards and will never compromise 
-          on your piece of mind and safety of your kids.
+          on your peace of mind and safety of your kids.
         </p>
       </CategoryCard>
       <CategoryCard title="Our Services" :objectives="servicesList"/>
