@@ -163,7 +163,7 @@ const handleStepDecrement = () => {
      <p class="text-center text-2xl">Payment Brief Will Be Here</p>
   </div>
 
-  <div class="flex justify-evenly">
+  <div class="flex flex-col gap-10 lg:flex-row justify-evenly ">
     <button
       class="bg-yellow-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-yellow-800"
       v-on:click="handleStepDecrement"
