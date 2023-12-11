@@ -1,10 +1,21 @@
 <script setup lang="ts">
 import { Mail, Instagram, Phone } from "lucide-vue-next";
 import Footer from "../components/Footer.vue";
+import { InputHTMLAttributes, TextareaHTMLAttributes, ref } from "vue";
+const firstName = ref<InputHTMLAttributes | null>(null);
+const lastName = ref<InputHTMLAttributes | null>(null);
+const email = ref<InputHTMLAttributes | null>(null);
+const message = ref<TextareaHTMLAttributes | null>(null);
+const handleFormSubmission = (e) => {
+     e.preventDefault();
+     if(firstName.value?.value && lastName.value?.value && email.value?.value && message.value?.value){
+         console.log(firstName.value?.value, lastName.value?.value, email.value?.value, message.value?.value);
+     }
+};
 </script>
 
 <template>
-  <form class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg">
+  <form class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg" @submit="handleFormSubmission">
     <h4 class="text-center text-lg font-bold">CONTACT US</h4>
     <p class="text-lg font-semibold text-center">
       Our team is eager to promptly address any inquiries you may have, Do you
@@ -42,39 +53,43 @@ import Footer from "../components/Footer.vue";
           fill="blue"
           class="hover:scale-125 transition-all duration-150 delay-150 ease-in-out"
         />
-        <p>Reach Us On Instagram</p>
+        <p>Reach Us On IG</p>
       </div>
     </div>
 
-    <div class="flex justify-between gap-10">
+    <div class="flex justify-between flex-col lg:flex-row gap-10">
       <input
-      type="text"
-      class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
-      placeholder="Enter Your First Name"
-      required
-    />
+        ref="firstName"
+        type="text"
+        class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+        placeholder="Enter Your First Name"
+        required
+      />
       <input
-      type="text"
-      class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
-      placeholder="Enter Your Last Name"
-      required
-    />
-
+        ref="lastName"
+        type="text"
+        class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+        placeholder="Enter Your Last Name"
+        required
+      />
     </div>
 
     <input
+      ref="email"
       type="email"
       class="p-4 border focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
       placeholder="Enter Your Email Address"
       required
     />
     <textarea
+      ref="message"
       class="p-4 h-[300px] border focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md resize-none"
       placeholder="Drop a Message"
       required
     ></textarea>
 
     <button
+      
       type="submit"
       class="bg-blue-400 text-white p-4 rounded-md hover:bg-blue-800 transition-all delay-200 duration-250"
     >
