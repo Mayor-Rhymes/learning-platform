@@ -101,7 +101,7 @@ const handleMenuVisibility = () => {
               class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
             >
               <router-link
-                to="/tutor"
+                to="/about"
                 active-class="bg-blue-400"
                 class="hover:bg-blue-500"
               >
@@ -192,7 +192,7 @@ const handleMenuVisibility = () => {
             class="p-4 rounded-md hover:text-white transition-all delay-150 duration-150"
           >
             <router-link
-              to="/services"
+              to="/about"
               active-class="bg-blue-400"
               class="hover:bg-blue-500"
             >

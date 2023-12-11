@@ -16,6 +16,8 @@ const level = [
   { name: "JSS 2" },
   { name: "JSS 3" },
   { name: "SSS 1" },
+  { name: "SSS 2" },
+  { name: "SSS 3" },
 ];
 const selectedLevel = ref(level[0]);
 </script>

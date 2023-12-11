@@ -171,10 +171,18 @@ const handleStepDecrement = () => {
       Previous
     </button>
     <button
+      v-if="step < 4"
       class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
       v-on:click="handleStepIncrement"
     >
       Next
+    </button>
+    <button
+      v-if="step == 4"
+      class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
+      v-on:click="handleStepIncrement"
+    >
+      Finish
     </button>
   </div>
 </template>
