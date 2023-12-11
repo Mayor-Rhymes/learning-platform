@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { ChevronsUpDownIcon } from "lucide-vue-next";
+import { ChevronsUpDownIcon, CheckIcon } from "lucide-vue-next";
 import {
   Listbox,
   // ListboxLabel,
