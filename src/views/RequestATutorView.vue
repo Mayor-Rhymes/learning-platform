@@ -121,7 +121,7 @@ const handleStepDecrement = () => {
 
   <div v-if="step === 3">
     <form class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg">
-      <div class="flex justify-between gap-10">
+      <div class="flex justify-between flex-col lg:flex-row gap-10">
         <input
           type="text"
           class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
@@ -135,7 +135,7 @@ const handleStepDecrement = () => {
           required
         />
       </div>
-      <div class="flex justify-between gap-10">
+      <div class="flex justify-between flex-col lg:flex-row gap-10">
         <input
           type="email"
           class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
