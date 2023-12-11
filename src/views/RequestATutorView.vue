@@ -119,9 +119,48 @@ const handleStepDecrement = () => {
     </RadioGroup>
   </div>
 
-
   <div v-if="step === 3">
-    The next step is here
+    <form class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg">
+      <div class="flex justify-between gap-10">
+        <input
+          type="text"
+          class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+          placeholder="Enter Your First Name"
+          required
+        />
+        <input
+          type="text"
+          class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+          placeholder="Enter Your Last Name"
+          required
+        />
+      </div>
+      <div class="flex justify-between gap-10">
+        <input
+          type="email"
+          class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+          placeholder="Enter Your Email Address"
+          required
+        />
+        <input
+          type="text"
+          class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
+          placeholder="Enter Your Phone Number"
+          required
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="bg-blue-400 text-white p-4 rounded-md hover:bg-blue-800 transition-all delay-200 duration-250"
+      >
+        SUBMIT INFORMATION
+      </button>
+    </form>
+  </div>
+
+  <div v-if="step === 4">
+     <p class="text-center text-2xl">Payment Brief Will Be Here</p>
   </div>
 
   <div class="flex justify-evenly">
