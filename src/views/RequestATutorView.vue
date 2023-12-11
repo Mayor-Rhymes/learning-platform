@@ -20,13 +20,25 @@ const selected = ref(plans[0]);
 const childNumber = ref(1);
 const step = ref(1);
 
-const handleIncrement = () => {
+const handleChildNumberIncrement = () => {
   childNumber.value++;
 };
 
-const handleDecrement = () => {
+const handleChildNumberDecrement = () => {
   if (childNumber.value > 1) {
     childNumber.value--;
+  }
+};
+
+const handleStepIncrement = () => {
+  if (step.value < 4) {
+    step.value++;
+  }
+};
+
+const handleStepDecrement = () => {
+  if (step.value > 1) {
+    step.value--;
   }
 };
 </script>
@@ -37,9 +49,9 @@ const handleDecrement = () => {
       <p class="text-2xl">How many kids need lesson?</p>
 
       <div class="flex justify-evenly items-center gap-5">
-        <MinusCircle @click="handleDecrement" color="coral" />
+        <MinusCircle @click="handleChildNumberDecrement" color="coral" />
         <p class="text-xl">{{ childNumber }}</p>
-        <PlusCircle @click="handleIncrement" color="coral" />
+        <PlusCircle @click="handleChildNumberIncrement" color="coral" />
       </div>
     </div>
     <form
@@ -52,7 +64,7 @@ const handleDecrement = () => {
   <div class="flex flex-col p-5" v-if="step === 2">
     <p>Which Do You Prefer?</p>
     <RadioGroup v-model="selected" class="px-20">
-      <RadioGroupLabel class="sr-only">Server size</RadioGroupLabel>
+      <RadioGroupLabel class="sr-only">Preference</RadioGroupLabel>
       <div class="space-y-2 flex flex-col gap-10">
         <RadioGroupOption
           as="template"
@@ -80,12 +92,6 @@ const handleDecrement = () => {
                   >
                     {{ plan.name }}
                   </RadioGroupLabel>
-                  <!-- <RadioGroupDescription
-                    as="span"
-                    :class="checked ? 'text-sky-100' : 'text-gray-500'"
-                    class="inline"
-                  >
-                  </RadioGroupDescription> -->
                 </div>
               </div>
               <div v-show="checked" class="shrink-0 text-white">
@@ -113,11 +119,23 @@ const handleDecrement = () => {
     </RadioGroup>
   </div>
 
-  
-  <button
-    class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
-    v-on:click="step++"
-  >
-    Next
-  </button>
+
+  <div v-if="step === 3">
+    The next step is here
+  </div>
+
+  <div class="flex justify-evenly">
+    <button
+      class="bg-yellow-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-yellow-800"
+      v-on:click="handleStepDecrement"
+    >
+      Previous
+    </button>
+    <button
+      class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
+      v-on:click="handleStepIncrement"
+    >
+      Next
+    </button>
+  </div>
 </template>
