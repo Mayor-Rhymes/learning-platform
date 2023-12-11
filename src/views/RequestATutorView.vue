@@ -46,7 +46,7 @@ const handleStepDecrement = () => {
 <template>
   <div v-if="step === 1">
     <div class="flex items-center px-10 gap-20">
-      <p class="text-2xl">How many kids need lesson?</p>
+      <p class="text-lg lg:text-2xl">How many kids need lesson?</p>
 
       <div class="flex justify-evenly items-center gap-5">
         <MinusCircle @click="handleChildNumberDecrement" color="coral" />
@@ -63,7 +63,7 @@ const handleStepDecrement = () => {
 
   <div class="flex flex-col p-5" v-if="step === 2">
     <p>Which Do You Prefer?</p>
-    <RadioGroup v-model="selected" class="px-20">
+    <RadioGroup v-model="selected" class="px-20 mt-5">
       <RadioGroupLabel class="sr-only">Preference</RadioGroupLabel>
       <div class="space-y-2 flex flex-col gap-10">
         <RadioGroupOption
