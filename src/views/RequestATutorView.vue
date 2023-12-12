@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, InputHTMLAttributes } from "vue";
 import { PlusCircle, MinusCircle } from "lucide-vue-next";
 import ClassList from "../components/ClassList.vue";
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from "@headlessui/vue";
@@ -31,7 +31,7 @@ const handleChildNumberDecrement = () => {
 };
 
 const handleStepIncrement = () => {
-  if (step.value < 4) {
+  if (step.value < 3) {
     step.value++;
   }
 };
@@ -39,6 +39,27 @@ const handleStepIncrement = () => {
 const handleStepDecrement = () => {
   if (step.value > 1) {
     step.value--;
+  }
+};
+
+const firstName = ref<InputHTMLAttributes | null>(null);
+const lastName = ref<InputHTMLAttributes | null>(null);
+const email = ref<InputHTMLAttributes | null>(null);
+const phoneNumber = ref<InputHTMLAttributes | null>(null);
+const handleFormSubmission = (e) => {
+  e.preventDefault();
+  if (
+    firstName.value?.value &&
+    lastName.value?.value &&
+    email.value?.value &&
+    phoneNumber.value?.value
+  ) {
+    console.log(
+      firstName.value?.value,
+      lastName.value?.value,
+      email.value?.value,
+      phoneNumber.value?.value
+    );
   }
 };
 </script>
@@ -120,15 +141,17 @@ const handleStepDecrement = () => {
   </div>
 
   <div v-if="step === 3">
-    <form class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg">
+    <form class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg" @submit="handleFormSubmission">
       <div class="flex justify-between flex-col lg:flex-row gap-10">
         <input
+          ref="firstName"
           type="text"
           class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
           placeholder="Enter Your First Name"
           required
         />
         <input
+          ref="lastName"
           type="text"
           class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
           placeholder="Enter Your Last Name"
@@ -137,12 +160,14 @@ const handleStepDecrement = () => {
       </div>
       <div class="flex justify-between flex-col lg:flex-row gap-10">
         <input
+          ref="email"
           type="email"
           class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
           placeholder="Enter Your Email Address"
           required
         />
         <input
+          ref="phoneNumber"
           type="text"
           class="p-4 border flex-1 focus:bg-white bg-slate-100 placeholder-black focus:border-blue-700 hover:border-blue-300 outline-none rounded-md"
           placeholder="Enter Your Phone Number"
@@ -159,11 +184,11 @@ const handleStepDecrement = () => {
     </form>
   </div>
 
-  <div v-if="step === 4">
-     <p class="text-center text-2xl">Payment Brief Will Be Here</p>
-  </div>
+  <!-- <div v-if="step === 4">
+    <p class="text-center text-2xl">Payment Brief Will Be Here</p>
+  </div> -->
 
-  <div class="flex flex-col p-4 gap-10 lg:flex-row justify-evenly ">
+  <div class="flex flex-col p-4 gap-10 lg:flex-row justify-evenly">
     <button
       class="bg-yellow-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-yellow-800"
       v-on:click="handleStepDecrement"
@@ -171,14 +196,14 @@ const handleStepDecrement = () => {
       Previous
     </button>
     <button
-      v-if="step < 4"
+      v-if="step < 3"
       class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
       v-on:click="handleStepIncrement"
     >
       Next
     </button>
     <button
-      v-if="step == 4"
+      v-if="step == 3"
       class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
       v-on:click="handleStepIncrement"
     >
