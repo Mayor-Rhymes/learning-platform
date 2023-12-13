@@ -2,8 +2,8 @@
   <div class="flex flex-col lg:flex-row mx-auto p-4 md:p-12 lg:w-[90%] rounded-md justify-center gap-20 bg-[whitesmoke]">
     <div class="flex flex-col gap-5">
       <p class="text-2xl lg:text-3xl font-bold leading-relaxed">
-        Learning Should not be Hard or Sad. It should be Fun. Let us Make Your
-        Learning Fun
+        Learning should not be hard or sad. It should be fun. Let us Make Your
+        learning superbly fun and inclusive
       </p>
 
       <p class="text-lg">

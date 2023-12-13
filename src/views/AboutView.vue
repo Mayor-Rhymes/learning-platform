@@ -16,7 +16,7 @@ import {
     <p
       class="text-center text-lg md:text-xl lg:mx-28 lg:text-3xl font-extrabold"
     >
-      We are on a mission to provide personalized physical and online tutoring
+      Frithland educational consult is on a mission to provide personalized physical and online tutoring
       tailored to every student's unique journey. Our goal is to help every
       student achieve academic success and realize their full potential.
     </p>

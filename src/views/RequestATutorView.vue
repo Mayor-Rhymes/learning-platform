@@ -2,7 +2,10 @@
 import { ref, InputHTMLAttributes } from "vue";
 import { PlusCircle, MinusCircle } from "lucide-vue-next";
 import ClassList from "../components/ClassList.vue";
+import { useChildStore } from "../lib/stores/child.ts";
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from "@headlessui/vue";
+
+const childStore = useChildStore();
 const plans = [
   {
     name: "Virtual",
@@ -17,16 +20,18 @@ const plans = [
 
 const selected = ref(plans[0]);
 
-const childNumber = ref(1);
+// const childNumber = ref(childStore.children.length);
 const step = ref(1);
 
 const handleChildNumberIncrement = () => {
-  childNumber.value++;
+  childStore.addNewChild();
+  // console.log(childNumber);
 };
 
 const handleChildNumberDecrement = () => {
-  if (childNumber.value > 1) {
-    childNumber.value--;
+  if (childStore.children.length > 1) {
+    childStore.reduceChild();
+    // console.log(childStore.children.values);
   }
 };
 
@@ -71,14 +76,19 @@ const handleFormSubmission = (e) => {
 
       <div class="flex justify-evenly items-center gap-5">
         <MinusCircle @click="handleChildNumberDecrement" color="coral" />
-        <p class="text-xl">{{ childNumber }}</p>
+        <p class="text-xl">{{ childStore.children.length }}</p>
         <PlusCircle @click="handleChildNumberIncrement" color="coral" />
       </div>
     </div>
+
     <form
       class="grid mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 place-items-center"
     >
-      <ClassList v-for="_ in childNumber" />
+      <ClassList
+        v-for="child in childStore.children"
+        :key="child.id"
+        :child="child"
+      />
     </form>
   </div>
 
@@ -141,7 +151,10 @@ const handleFormSubmission = (e) => {
   </div>
 
   <div v-if="step === 3">
-    <form class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg" @submit="handleFormSubmission">
+    <form
+      class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg"
+      @submit="handleFormSubmission"
+    >
       <div class="flex justify-between flex-col lg:flex-row gap-10">
         <input
           ref="firstName"

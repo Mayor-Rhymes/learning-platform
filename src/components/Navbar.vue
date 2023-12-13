@@ -137,7 +137,7 @@ const handleMenuVisibility = () => {
   </Transition>
 
   <p class="lg:hidden md:hidden text-xl block text-center">
-    We Make Learning Superbly Fun and Inclusive
+    We make learning superbly Fun and inclusive
   </p>
   <nav
     class="w-full hidden md:flex lg:flex p-5 z-40 h-20 items-center fixed top-0 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
