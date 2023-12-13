@@ -72,7 +72,7 @@ const handleFormSubmission = (e) => {
 <template>
   <div v-if="step === 1">
     <div class="flex items-center px-10 gap-20">
-      <p class="text-lg lg:text-2xl">How many kids need lesson?</p>
+      <p class="text-lg lg:text-2xl font-semibold">How many kids need lesson?</p>
 
       <div class="flex justify-evenly items-center gap-5">
         <MinusCircle @click="handleChildNumberDecrement" color="coral" />
@@ -93,7 +93,7 @@ const handleFormSubmission = (e) => {
   </div>
 
   <div class="flex flex-col p-5" v-if="step === 2">
-    <p>Which Do You Prefer?</p>
+    <p class="self-center text-xl font-semibold">Which Do You Prefer?</p>
     <RadioGroup v-model="selected" class="px-20 mt-5">
       <RadioGroupLabel class="sr-only">Preference</RadioGroupLabel>
       <div class="space-y-2 flex flex-col gap-10">
@@ -155,6 +155,7 @@ const handleFormSubmission = (e) => {
       class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg"
       @submit="handleFormSubmission"
     >
+      <p class="font-semibold text-center text-xl">Please enter your personal information</p>
       <div class="flex justify-between flex-col lg:flex-row gap-10">
         <input
           ref="firstName"
