@@ -43,7 +43,8 @@ const handleFormSubmission = (e) => {
           fill="green"
           class="hover:scale-125 transition-all duration-150 delay-150 ease-in-out"
         />
-        <p>Call Us</p>
+        <!-- <p>Call Us</p> -->
+        <a href="tel:+2349058674654">Call Us</a>
       </div>
       <div
         class="flex flex-col gap-5 items-center justify-center cursor-pointer"
