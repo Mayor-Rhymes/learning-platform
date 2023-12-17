@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar.vue";
 
 <template>
   <div
-    class="min-w-fit box-border justify-center flex flex-col md:mt-40 lg:mt-40 gap-10"
+    class="justify-center flex flex-col md:mt-40 lg:mt-40 gap-10"
   >
     <Navbar />
     <router-view />
