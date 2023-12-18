@@ -13,7 +13,7 @@
 
       </p>
 
-      <button class="p-3 w-56 rounded-md bg-blue-500 text-white hover:animate-pulse">Apply For A Tutor Demo</button>
+      <!-- <button class="p-3 w-56 rounded-md bg-blue-500 text-white hover:animate-pulse">Apply For A Tutor Demo</button> -->
     </div>
 
     <img
