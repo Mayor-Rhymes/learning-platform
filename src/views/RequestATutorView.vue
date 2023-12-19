@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, InputHTMLAttributes } from "vue";
-import { PlusCircle, MinusCircle } from "lucide-vue-next";
-import ClassList from "../components/ClassList.vue";
-import { useChildStore } from "../lib/stores/child.ts";
+// import { PlusCircle, MinusCircle } from "lucide-vue-next";
+// import ClassList from "../components/ClassList.vue";
+// import { useChildStore } from "../lib/stores/child.ts";
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from "@headlessui/vue";
 
-const childStore = useChildStore();
+// const childStore = useChildStore();
 const plans = [
   {
     name: "Virtual",
@@ -23,17 +23,17 @@ const selected = ref(plans[0]);
 // const childNumber = ref(childStore.children.length);
 const step = ref(1);
 
-const handleChildNumberIncrement = () => {
-  childStore.addNewChild();
-  // console.log(childNumber);
-};
+// const handleChildNumberIncrement = () => {
+//   childStore.addNewChild();
+  
+// };
 
-const handleChildNumberDecrement = () => {
-  if (childStore.children.length > 1) {
-    childStore.reduceChild();
-    // console.log(childStore.children.values);
-  }
-};
+// const handleChildNumberDecrement = () => {
+//   if (childStore.children.length > 1) {
+//     childStore.reduceChild();
+    
+//   }
+// };
 
 const handleStepIncrement = () => {
   if (step.value < 3) {
@@ -47,10 +47,22 @@ const handleStepDecrement = () => {
   }
 };
 
+const level = [
+  { name: "Nursery" },
+  { name: "Primary" },
+  { name: "JSS 1" },
+  { name: "JSS 2" },
+  { name: "JSS 3" },
+  { name: "SSS 1" },
+  { name: "SSS 2" },
+  { name: "SSS 3" },
+];
 const firstName = ref<InputHTMLAttributes | null>(null);
 const lastName = ref<InputHTMLAttributes | null>(null);
 const email = ref<InputHTMLAttributes | null>(null);
 const phoneNumber = ref<InputHTMLAttributes | null>(null);
+const levelRef = ref(level);
+
 const handleFormSubmission = (e) => {
   e.preventDefault();
   if (
@@ -74,21 +86,30 @@ const handleFormSubmission = (e) => {
     <div class="flex items-center px-10 gap-20">
       <p class="text-lg lg:text-2xl font-semibold">How many kids need lesson?</p>
 
-      <div class="flex justify-evenly items-center gap-5">
+      <!-- <div class="flex justify-evenly items-center gap-5">
         <MinusCircle @click="handleChildNumberDecrement" color="coral" />
         <p class="text-xl">{{ childStore.children.length }}</p>
         <PlusCircle @click="handleChildNumberIncrement" color="coral" />
-      </div>
+      </div> -->
     </div>
 
     <form
-      class="grid mt-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 place-items-center"
+      class="flex px-6 items-center mt-4"
     >
-      <ClassList
+      <!-- <ClassList
         v-for="child in childStore.children"
         :key="child.id"
         :child="child"
-      />
+      /> -->
+
+      <!-- <ClassList /> -->
+
+      <select multiple="true" class="w-full">
+
+        <option v-for="lev in levelRef" :value="lev.name">
+          {{ lev.name }}
+        </option>
+      </select>
     </form>
   </div>
 

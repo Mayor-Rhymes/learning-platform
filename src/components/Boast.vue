@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import {
-  PersonStanding,
-  Star,
-  CheckCircle,
-} from "lucide-vue-next";
+import { PersonStanding, Star, CheckCircle } from "lucide-vue-next";
 import { testimonials } from "../lib/mockTestimonials";
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import "@splidejs/vue-splide/css";
@@ -19,7 +15,7 @@ import "@splidejs/vue-splide/css";
         </p>
 
         <h5 class="text-2xl lg:text-4xl md:text-3xl font-extrabold">
-          Make us Your Right Channel To Academic excellence and success.
+          Make us your right channel to academic excellence and success.
         </h5>
 
         <p>
@@ -47,11 +43,12 @@ import "@splidejs/vue-splide/css";
           </li>
         </ul>
 
-        <button
+        <router-link
+          to="/request-a-tutor"
           class="bg-blue-600 rounded-lg px-6 py-4 font-bold flex gap-3 justify-center lg:w-96 items-center"
         >
           <PersonStanding /> Request a Professional Tutor
-        </button>
+        </router-link>
       </div>
 
       <!-- <div class="grid grid-cols-2 justify-center">
@@ -79,7 +76,7 @@ import "@splidejs/vue-splide/css";
 
       <div class="flex flex-col gap-10">
         <h5 class="text-lg font-extrabold text-center">
-          We Teach Effectively To Ensure That Our Students Reach For The Moon
+          We teach effectively to ensure that our students reach for the moon
         </h5>
 
         <!-- <ul class="flex flex-col px-2 lg:px-10 gap-5 list-none text-lg">

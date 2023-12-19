@@ -16,7 +16,6 @@ export enum Class {
   Sss2,
   Sss3,
 }
-
 export interface IChild {
   id: number;
   class: Class;

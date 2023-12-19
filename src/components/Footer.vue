@@ -13,7 +13,25 @@
     </div>
 
     <div>
-      <p class="text-center">Dulux building km 18/19 Lekki Epe expressway, Lekki, Lagos.</p>
+      <p class="text-center" v-text="settings.office_address"></p>
+      <p v-text="settings.company_name"></p>
     </div>
   </div>
 </template>
+<script lang="js">
+
+import appSettings from "../lib/app.json";
+export default {
+
+ data() {
+
+   return {
+      settings: appSettings,
+
+
+   }
+ },
+
+
+}
+</script>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, defineProps } from "vue";
-defineProps<{ child: IChild }>();
+import { ref } from "vue";
+// defineProps<{ child: IChild }>();
 import { ChevronsUpDownIcon, CheckIcon } from "lucide-vue-next";
 import {
   Listbox,
@@ -9,7 +9,7 @@ import {
   ListboxOptions,
   ListboxOption,
 } from "@headlessui/vue";
-import { IChild } from "../lib/stores/child";
+// import { IChild } from "../lib/stores/child";
 
 const level = [
   { name: "Nursery" },
@@ -56,6 +56,7 @@ const selectedLevel = ref(level[0]);
               :key="person.name"
               :value="person"
               as="template"
+              aria-multiselectable="true"
             >
               <li
                 :class="[
