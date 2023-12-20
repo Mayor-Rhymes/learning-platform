@@ -4,6 +4,7 @@ defineProps<{
   objectives?: string[];
   description?: string;
 }>();
+
 </script>
 
 <template>

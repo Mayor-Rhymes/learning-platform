@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
-// defineProps<{ child: IChild }>();
+import { useChildStore } from "../lib/stores/child";
+import { level } from "../lib/stores/child";
+const props = defineProps<{ child: IChild }>();
 import { ChevronsUpDownIcon, CheckIcon } from "lucide-vue-next";
+
+const childStore = useChildStore();
+
 import {
   Listbox,
   // ListboxLabel,
@@ -9,19 +14,15 @@ import {
   ListboxOptions,
   ListboxOption,
 } from "@headlessui/vue";
-// import { IChild } from "../lib/stores/child";
+import { IChild } from "../lib/stores/child";
 
-const level = [
-  { name: "Nursery" },
-  { name: "Primary" },
-  { name: "JSS 1" },
-  { name: "JSS 2" },
-  { name: "JSS 3" },
-  { name: "SSS 1" },
-  { name: "SSS 2" },
-  { name: "SSS 3" },
-];
-const selectedLevel = ref(level[0]);
+
+const selectedLevel = ref(props.child.class);
+const handleLevelChange = () => {
+  childStore.modifyChildLevel(props.child.id, selectedLevel.value);
+  console.log(selectedLevel.value);
+  console.log(childStore.children)
+};
 </script>
 
 <template>
@@ -31,7 +32,7 @@ const selectedLevel = ref(level[0]);
         <ListboxButton
           class="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
         >
-          <span class="block truncate">{{ selectedLevel.name }}</span>
+          <span class="block truncate">{{ selectedLevel }}</span>
           <span
             class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"
           >
@@ -52,11 +53,12 @@ const selectedLevel = ref(level[0]);
           >
             <ListboxOption
               v-slot="{ active, selected }"
-              v-for="person in level"
-              :key="person.name"
-              :value="person"
+              v-for="lev in level"
+              :key="lev"
+              :value="lev"
               as="template"
               aria-multiselectable="true"
+              @click="handleLevelChange"
             >
               <li
                 :class="[
@@ -69,7 +71,7 @@ const selectedLevel = ref(level[0]);
                     selected ? 'font-medium' : 'font-normal',
                     'block truncate',
                   ]"
-                  >{{ person.name }}</span
+                  >{{ lev }}</span
                 >
                 <span
                   v-if="selected"

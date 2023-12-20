@@ -16,18 +16,29 @@ export enum Class {
   Sss2,
   Sss3,
 }
+
+export const level = [
+  "Nursery",
+  "Primary",
+  "Jss1",
+  "Jss2",
+  "Jss3",
+  "Sss1",
+  "Sss2",
+  "Sss3",
+];
 export interface IChild {
   id: number;
-  class: Class;
+  class: string;
 }
 
 export const useChildStore = defineStore("child", () => {
-  const children = ref<IChild[]>([{ id: 1, class: Class.Nursery }]);
-
+  const children = ref<IChild[]>([{ id: 1, class: level[0] }]);
+  
   const addNewChild = () => {
     children.value = [
       ...children.value,
-      { id: children.value.length, class: Class.Nursery},
+      { id: children.value.length + 1, class: level[0] },
     ];
   };
 
@@ -35,7 +46,15 @@ export const useChildStore = defineStore("child", () => {
     children.value = children.value.slice(0, children.value.length - 1);
   };
 
+  const modifyChildLevel = (id: number, newLevel: string) => {
+     
+    const childToModify = children.value.find(child => child.id === id);
+    if(childToModify){
+       childToModify.class = newLevel;
+    }
 
-  return {children, addNewChild, reduceChild};
+  
+  }
 
+  return { children, addNewChild, reduceChild, modifyChildLevel };
 });

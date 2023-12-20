@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { ref, InputHTMLAttributes } from "vue";
-// import { PlusCircle, MinusCircle } from "lucide-vue-next";
-// import ClassList from "../components/ClassList.vue";
-// import { useChildStore } from "../lib/stores/child.ts";
+import { ref, InputHTMLAttributes, onMounted } from "vue";
+import { PlusCircle, MinusCircle } from "lucide-vue-next";
+import ClassList from "../components/ClassList.vue";
+import { useChildStore } from "../lib/stores/child.ts";
+// import { level } from "../lib/stores/child.ts";
 import { RadioGroup, RadioGroupLabel, RadioGroupOption } from "@headlessui/vue";
 
-// const childStore = useChildStore();
+const childStore = useChildStore();
 const plans = [
   {
     name: "Virtual",
@@ -20,48 +21,52 @@ const plans = [
 
 const selected = ref(plans[0]);
 
+
+
 // const childNumber = ref(childStore.children.length);
 const step = ref(1);
 
-// const handleChildNumberIncrement = () => {
-//   childStore.addNewChild();
+const handleChildNumberIncrement = () => {
+  childStore.addNewChild();
   
-// };
+};
 
-// const handleChildNumberDecrement = () => {
-//   if (childStore.children.length > 1) {
-//     childStore.reduceChild();
+const handleChildNumberDecrement = () => {
+  if (childStore.children.length > 1) {
+    childStore.reduceChild();
     
-//   }
-// };
+  }
+};
 
 const handleStepIncrement = () => {
   if (step.value < 3) {
     step.value++;
+    console.log(selected.value.name);
   }
 };
 
 const handleStepDecrement = () => {
   if (step.value > 1) {
     step.value--;
+    console.log(selected.value.name);
   }
 };
 
-const level = [
-  { name: "Nursery" },
-  { name: "Primary" },
-  { name: "JSS 1" },
-  { name: "JSS 2" },
-  { name: "JSS 3" },
-  { name: "SSS 1" },
-  { name: "SSS 2" },
-  { name: "SSS 3" },
-];
+// const level = [
+//   { name: "Nursery" },
+//   { name: "Primary" },
+//   { name: "JSS 1" },
+//   { name: "JSS 2" },
+//   { name: "JSS 3" },
+//   { name: "SSS 1" },
+//   { name: "SSS 2" },
+//   { name: "SSS 3" },
+// ];
 const firstName = ref<InputHTMLAttributes | null>(null);
 const lastName = ref<InputHTMLAttributes | null>(null);
 const email = ref<InputHTMLAttributes | null>(null);
 const phoneNumber = ref<InputHTMLAttributes | null>(null);
-const levelRef = ref(level);
+// const levelRef = ref(level);
 
 const handleFormSubmission = (e) => {
   e.preventDefault();
@@ -75,10 +80,17 @@ const handleFormSubmission = (e) => {
       firstName.value?.value,
       lastName.value?.value,
       email.value?.value,
-      phoneNumber.value?.value
+      phoneNumber.value?.value,
+      selected.value,
+      childStore.children
     );
   }
 };
+
+
+onMounted(() => {
+  console.log(childStore.children.values)
+})
 </script>
 
 <template>
@@ -86,30 +98,30 @@ const handleFormSubmission = (e) => {
     <div class="flex items-center px-10 gap-20">
       <p class="text-lg lg:text-2xl font-semibold">How many kids need lesson?</p>
 
-      <!-- <div class="flex justify-evenly items-center gap-5">
+      <div class="flex justify-evenly items-center gap-5">
         <MinusCircle @click="handleChildNumberDecrement" color="coral" />
         <p class="text-xl">{{ childStore.children.length }}</p>
         <PlusCircle @click="handleChildNumberIncrement" color="coral" />
-      </div> -->
+      </div>
     </div>
 
     <form
-      class="flex px-6 items-center mt-4"
+      class="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-4 mt-4"
     >
-      <!-- <ClassList
+      <ClassList
         v-for="child in childStore.children"
         :key="child.id"
         :child="child"
-      /> -->
+      />
 
       <!-- <ClassList /> -->
 
-      <select multiple="true" class="w-full">
+      <!-- <select multiple="true" class="w-full">
 
         <option v-for="lev in levelRef" :value="lev.name">
           {{ lev.name }}
         </option>
-      </select>
+      </select> -->
     </form>
   </div>
 
