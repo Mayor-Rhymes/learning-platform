@@ -19,7 +19,7 @@ const plans = [
   },
 ];
 
-const selected = ref(plans[0]);
+const selectedPlan = ref(plans[0]);
 
 
 
@@ -41,14 +41,14 @@ const handleChildNumberDecrement = () => {
 const handleStepIncrement = () => {
   if (step.value < 3) {
     step.value++;
-    console.log(selected.value.name);
+    
   }
 };
 
 const handleStepDecrement = () => {
   if (step.value > 1) {
     step.value--;
-    console.log(selected.value.name);
+    
   }
 };
 
@@ -81,8 +81,9 @@ const handleFormSubmission = (e) => {
       lastName.value?.value,
       email.value?.value,
       phoneNumber.value?.value,
-      selected.value,
-      childStore.children
+      selectedPlan.value,
+      childStore.children,
+      childStore.children.length
     );
   }
 };
@@ -127,7 +128,7 @@ onMounted(() => {
 
   <div class="flex flex-col p-5" v-if="step === 2">
     <p class="self-center text-xl font-semibold">Which Do You Prefer?</p>
-    <RadioGroup v-model="selected" class="px-20 mt-5">
+    <RadioGroup v-model="selectedPlan" class="px-20 mt-5">
       <RadioGroupLabel class="sr-only">Preference</RadioGroupLabel>
       <div class="space-y-2 flex flex-col gap-10">
         <RadioGroupOption
