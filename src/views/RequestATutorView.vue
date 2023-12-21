@@ -21,34 +21,28 @@ const plans = [
 
 const learningMethod = ref(plans[0]);
 
-
-
 // const childNumber = ref(childStore.children.length);
 const step = ref(1);
 
 const handleChildNumberIncrement = () => {
   childStore.addNewChild();
-  
 };
 
 const handleChildNumberDecrement = () => {
   if (childStore.children.length > 1) {
     childStore.reduceChild();
-    
   }
 };
 
 const handleStepIncrement = () => {
   if (step.value < 3) {
     step.value++;
-    
   }
 };
 
 const handleStepDecrement = () => {
   if (step.value > 1) {
     step.value--;
-    
   }
 };
 
@@ -68,7 +62,7 @@ const email = ref<InputHTMLAttributes | null>(null);
 const phoneNumber = ref<InputHTMLAttributes | null>(null);
 // const levelRef = ref(level);
 
-const handleFormSubmission = (e) => {
+const handleFormSubmission = async (e) => {
   e.preventDefault();
   if (
     firstName.value?.value &&
@@ -76,28 +70,61 @@ const handleFormSubmission = (e) => {
     email.value?.value &&
     phoneNumber.value?.value
   ) {
-    console.log(
-      firstName.value?.value,
-      lastName.value?.value,
-      email.value?.value,
-      phoneNumber.value?.value,
-      learningMethod.value,
-      childStore.children,
-      childStore.children.length
-    );
+    // console.log(
+    //   firstName.value?.value,
+    //   lastName.value?.value,
+    //   email.value?.value,
+    //   phoneNumber.value?.value,
+    //   learningMethod.value,
+    //   childStore.children,
+    //   childStore.children.length
+    // );
+
+    try {
+      const response = await fetch("http://localhost:4000/data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: firstName.value?.value,
+          lastName: lastName.value?.value,
+          email: email.value?.value,
+          phoneNumber: phoneNumber.value?.value,
+          learningMethod: learningMethod.value.name,
+          numberOfKids: childStore.children.length,
+          childrenData: childStore.children,
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        firstName.value.value = "";
+        lastName.value.value = "";
+        email.value.value = "";
+        phoneNumber.value.value = "";
+        learningMethod.value = plans[0];
+        childStore.resetChildren();
+      
+      }
+    } catch (e) {
+      console.log("There was a serious issue");
+    }
   }
 };
 
-
 onMounted(() => {
-  console.log(childStore.children.values)
-})
+  console.log(childStore.children.values);
+});
 </script>
 
 <template>
   <div v-if="step === 1">
     <div class="flex items-center px-10 gap-20">
-      <p class="text-lg lg:text-2xl font-semibold">How many kids need lesson?</p>
+      <p class="text-lg lg:text-2xl font-semibold">
+        How many kids need lesson?
+      </p>
 
       <div class="flex justify-evenly items-center gap-5">
         <MinusCircle @click="handleChildNumberDecrement" color="coral" />
@@ -106,9 +133,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <form
-      class="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-4 mt-4"
-    >
+    <form class="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-4 mt-4">
       <ClassList
         v-for="child in childStore.children"
         :key="child.id"
@@ -189,7 +214,9 @@ onMounted(() => {
       class="flex flex-col gap-10 w-full lg:w-[75%] mx-auto p-10 shadow-lg"
       @submit="handleFormSubmission"
     >
-      <p class="font-semibold text-center text-xl">Please enter your personal information</p>
+      <p class="font-semibold text-center text-xl">
+        Please enter your personal information
+      </p>
       <div class="flex justify-between flex-col lg:flex-row gap-10">
         <input
           ref="firstName"

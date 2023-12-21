@@ -56,5 +56,9 @@ export const useChildStore = defineStore("child", () => {
   
   }
 
-  return { children, addNewChild, reduceChild, modifyChildLevel };
+  const resetChildren = () => {
+    children.value = [{ id: 1, class: level[0] }]
+  }
+
+  return { children, addNewChild, reduceChild, modifyChildLevel, resetChildren };
 });
