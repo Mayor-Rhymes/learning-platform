@@ -5,19 +5,24 @@ import Footer from "../components/Footer.vue";
 // import Metric from "../components/Metric.vue";
 
 import Boast from "../components/Boast.vue";
-
+// import Testimonial from "../components/Testimonial.vue";
+import TestimonialList from "../components/TestimonialList.vue";
 </script>
 
 <template>
-  <HeroSection />
+  
+    <HeroSection />
 
-  <!-- <Partners /> -->
+    <!-- <Partners /> -->
 
-  <!-- <Metric /> -->
+    <!-- <Metric /> -->
 
-  <Boast />
+    <Boast />
 
-  <Footer />
+    <TestimonialList />
 
-  <!-- <ExamTile /> -->
+    <Footer />
+
+    <!-- <ExamTile /> -->
+  
 </template>

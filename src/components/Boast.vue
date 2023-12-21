@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { PersonStanding, Star, CheckCircle } from "lucide-vue-next";
-import { testimonials } from "../lib/mockTestimonials";
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
-import "@splidejs/vue-splide/css";
+import { PersonStanding, CheckCircle } from "lucide-vue-next";
 </script>
 
 <template>
@@ -111,7 +108,7 @@ import "@splidejs/vue-splide/css";
         class="hidden lg:block cursor-pointer"
       /> -->
 
-    <Splide :options="{ rewind: true }">
+    <!-- <Splide :options="{ rewind: true }">
       <SplideSlide v-for="testimonial in testimonials">
         <div
           class="flex flex-col gap-4 items-center transition-all delay-75 duration-100"
@@ -132,7 +129,7 @@ import "@splidejs/vue-splide/css";
           <p>{{ testimonial.location }}</p>
         </div>
       </SplideSlide>
-    </Splide>
+    </Splide> -->
 
     <!-- <div class="flex gap-4">
         <ChevronLeftCircle
