@@ -19,7 +19,7 @@ const plans = [
   },
 ];
 
-const selectedPlan = ref(plans[0]);
+const learningMethod = ref(plans[0]);
 
 
 
@@ -81,7 +81,7 @@ const handleFormSubmission = (e) => {
       lastName.value?.value,
       email.value?.value,
       phoneNumber.value?.value,
-      selectedPlan.value,
+      learningMethod.value,
       childStore.children,
       childStore.children.length
     );
@@ -127,8 +127,8 @@ onMounted(() => {
   </div>
 
   <div class="flex flex-col p-5" v-if="step === 2">
-    <p class="self-center text-xl font-semibold">Which Do You Prefer?</p>
-    <RadioGroup v-model="selectedPlan" class="px-20 mt-5">
+    <p class="self-center text-xl font-semibold">Which do you prefer?</p>
+    <RadioGroup v-model="learningMethod" class="px-20 mt-5">
       <RadioGroupLabel class="sr-only">Preference</RadioGroupLabel>
       <div class="space-y-2 flex flex-col gap-10">
         <RadioGroupOption
