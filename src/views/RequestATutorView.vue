@@ -81,7 +81,7 @@ const handleFormSubmission = async (e) => {
     // );
 
     try {
-      const response = await fetch("http://localhost:4000/data", {
+      const response = await fetch(import.meta.env.VITE_TRANSFER_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const handleFormSubmission = async (e) => {
           phoneNumber: phoneNumber.value?.value,
           learningMethod: learningMethod.value.name,
           numberOfKids: childStore.children.length,
-          childrenData: childStore.children,
+          childrenData: JSON.stringify(childStore.children),
         }),
       });
 
@@ -133,7 +133,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <form class="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-4 mt-4">
+    <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 place-items-center gap-4 mt-4">
       <ClassList
         v-for="child in childStore.children"
         :key="child.id"

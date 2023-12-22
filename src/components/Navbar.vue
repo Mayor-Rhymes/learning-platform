@@ -55,7 +55,7 @@ const handleMenuVisibility = () => {
   >
     <nav
       v-if="menuVisible"
-      class="w-full lg:hidden flex flex-col p-2 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
+      class="w-full lg:hidden md:hidden flex flex-col p-2 bg-white justify-center gap-5 font-semibold lg:border-b-gray-100 lg:border-b-4"
     >
       <Menu
         as="div"
