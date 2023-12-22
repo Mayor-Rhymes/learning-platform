@@ -81,7 +81,7 @@ const handleFormSubmission = async (e) => {
     // );
 
     try {
-      const response = await fetch(import.meta.env.VITE_TRANSFER_URL, {
+      const response = await fetch("https://myadmin.frithlandeduconsult.org.ng/frithlan/api/applicationdata.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
