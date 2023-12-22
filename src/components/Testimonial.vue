@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <div class="bg-[#F4F0EE] p-7 rounded-md flex flex-col gap-8">
+  <div class="bg-[#F4FDEE] p-7 rounded-md flex flex-col items-center justify-center gap-8">
     <p class="text-lg font-semibold">
        {{ content }}
     </p>
