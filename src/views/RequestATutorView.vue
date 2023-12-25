@@ -23,6 +23,8 @@ const learningMethod = ref(plans[0]);
 
 // const childNumber = ref(childStore.children.length);
 const step = ref(1);
+const error = ref<boolean>(false);
+const responseMessage = ref("");
 
 const handleChildNumberIncrement = () => {
   childStore.addNewChild();
@@ -82,13 +84,24 @@ const handleFormSubmission = async (e) => {
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        firstName.value.value = "";
-        lastName.value.value = "";
-        email.value.value = "";
-        phoneNumber.value.value = "";
-        learningMethod.value = plans[0];
-        childStore.resetChildren();
-        step.value = 4;
+        
+        if (data.status === "error") {
+          console.log(data);
+          error.value = true;
+          responseMessage.value = data.message;
+          step.value = 4;
+        } else if (data.status === "success") {
+          console.log(data);
+          responseMessage.value = data.message;
+          error.value = data.error ? true : false;
+          firstName.value.value = "";
+          lastName.value.value = "";
+          email.value.value = "";
+          phoneNumber.value.value = "";
+          learningMethod.value = plans[0];
+          childStore.resetChildren();
+          step.value = 4;
+        }
       }
     } catch (e) {
       console.log("There was a serious issue");
@@ -242,19 +255,28 @@ const handleFormSubmission = async (e) => {
   <!-- <div v-if="step === 4">
     <p class="text-center text-2xl">Payment Brief Will Be Here</p>
   </div> -->
-  <div class="flex flex-col items-center gap-10" v-if="step === 4">
-    <img src="../assets/finish-checkmark.svg" alt="done" />
+  <div class="flex flex-col items-center gap-10 py-5" v-if="step === 4">
+    <img src="../assets/finish-checkmark.svg" alt="done" v-if="!error" />
+
+    <img src="../assets/error.svg" alt="done" v-if="error" />
 
     <p class="font-bold text-lg text-center">
-      Your information has been submitted.
+      {{ responseMessage }}
     </p>
 
     <router-link
       to="/"
-      class="bg-green-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-yellow-800"
+      class="bg-green-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-green-800"
     >
       Go Home
     </router-link>
+
+    <button
+      @click="step = 1"
+      class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
+    >
+      Start Over
+    </button>
   </div>
 
   <div
