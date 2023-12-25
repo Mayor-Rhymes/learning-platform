@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, InputHTMLAttributes, onMounted } from "vue";
+import { ref, InputHTMLAttributes } from "vue";
 import { PlusCircle, MinusCircle } from "lucide-vue-next";
 import ClassList from "../components/ClassList.vue";
 import { useChildStore } from "../lib/stores/child.ts";
@@ -46,21 +46,10 @@ const handleStepDecrement = () => {
   }
 };
 
-// const level = [
-//   { name: "Nursery" },
-//   { name: "Primary" },
-//   { name: "JSS 1" },
-//   { name: "JSS 2" },
-//   { name: "JSS 3" },
-//   { name: "SSS 1" },
-//   { name: "SSS 2" },
-//   { name: "SSS 3" },
-// ];
 const firstName = ref<InputHTMLAttributes | null>(null);
 const lastName = ref<InputHTMLAttributes | null>(null);
 const email = ref<InputHTMLAttributes | null>(null);
 const phoneNumber = ref<InputHTMLAttributes | null>(null);
-// const levelRef = ref(level);
 
 const handleFormSubmission = async (e) => {
   e.preventDefault();
@@ -70,32 +59,25 @@ const handleFormSubmission = async (e) => {
     email.value?.value &&
     phoneNumber.value?.value
   ) {
-    // console.log(
-    //   firstName.value?.value,
-    //   lastName.value?.value,
-    //   email.value?.value,
-    //   phoneNumber.value?.value,
-    //   learningMethod.value,
-    //   childStore.children,
-    //   childStore.children.length
-    // );
-
     try {
-      const response = await fetch("https://myadmin.frithlandeduconsult.org.ng/frithlan/api/applicationdata.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName: firstName.value?.value,
-          lastName: lastName.value?.value,
-          email: email.value?.value,
-          phoneNumber: phoneNumber.value?.value,
-          learningMethod: learningMethod.value.name,
-          numberOfKids: childStore.children.length,
-          childrenData: JSON.stringify(childStore.children),
-        }),
-      });
+      const response = await fetch(
+        "https://myadmin.frithlandeduconsult.org.ng/frithlan/api/applicationdata.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName: firstName.value?.value,
+            lastName: lastName.value?.value,
+            email: email.value?.value,
+            phoneNumber: phoneNumber.value?.value,
+            learningMethod: learningMethod.value.name,
+            numberOfKids: childStore.children.length,
+            childrenData: JSON.stringify(childStore.children),
+          }),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
@@ -106,17 +88,13 @@ const handleFormSubmission = async (e) => {
         phoneNumber.value.value = "";
         learningMethod.value = plans[0];
         childStore.resetChildren();
-      
+        step.value = 4;
       }
     } catch (e) {
       console.log("There was a serious issue");
     }
   }
 };
-
-onMounted(() => {
-  console.log(childStore.children.values);
-});
 </script>
 
 <template>
@@ -133,7 +111,9 @@ onMounted(() => {
       </div>
     </div>
 
-    <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 place-items-center gap-4 mt-4">
+    <form
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 place-items-center gap-4 mt-4"
+    >
       <ClassList
         v-for="child in childStore.children"
         :key="child.id"
@@ -262,8 +242,25 @@ onMounted(() => {
   <!-- <div v-if="step === 4">
     <p class="text-center text-2xl">Payment Brief Will Be Here</p>
   </div> -->
+  <div class="flex flex-col items-center gap-10" v-if="step === 4">
+    <img src="../assets/finish-checkmark.svg" alt="done" />
 
-  <div class="flex flex-col p-4 gap-10 lg:flex-row justify-evenly">
+    <p class="font-bold text-lg text-center">
+      Your information has been submitted.
+    </p>
+
+    <router-link
+      to="/"
+      class="bg-green-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-yellow-800"
+    >
+      Go Home
+    </router-link>
+  </div>
+
+  <div
+    class="flex flex-col p-4 gap-10 lg:flex-row justify-evenly"
+    v-if="step < 4"
+  >
     <button
       class="bg-yellow-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-yellow-800"
       v-on:click="handleStepDecrement"
@@ -277,12 +274,12 @@ onMounted(() => {
     >
       Next
     </button>
-    <button
+    <!-- <button
       v-if="step == 3"
       class="bg-blue-500 text-center text-white w-72 p-3 rounded-md self-center hover:bg-blue-800"
       v-on:click="handleStepIncrement"
     >
       Finish
-    </button>
+    </button> -->
   </div>
 </template>
